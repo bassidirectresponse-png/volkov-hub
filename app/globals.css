@@ -2,23 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { --bg: oklch(0.105 0.008 20); --surface: oklch(0.145 0.009 20); --raised: oklch(0.18 0.01 20); --ink: oklch(0.95 0.005 20); --muted: oklch(0.68 0.012 20); --line: oklch(0.27 0.012 20); --primary: oklch(0.55 0.18 20); --primary-hover: oklch(0.50 0.18 20); --success: oklch(0.72 0.15 150); --warning: oklch(0.78 0.15 80); }
+:root { --bg: oklch(0.105 0 0); --surface: oklch(0.145 0.006 25); --raised: oklch(0.18 0.008 25); --ink: oklch(0.96 0.003 80); --muted: oklch(0.68 0.01 70); --line: oklch(0.28 0.008 35); --wine: oklch(0.42 0.12 18); --wine-hover: oklch(0.37 0.115 18); --gold: oklch(0.76 0.105 80); --gold-soft: oklch(0.76 0.105 80 / .14); --success: oklch(0.72 0.15 150); --warning: oklch(0.78 0.15 80); }
 * { box-sizing: border-box; }
 html { background: var(--bg); }
-body { min-height: 100vh; margin: 0; background: var(--bg); color: var(--ink); font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
+body { min-height: 100vh; margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 14px; text-rendering: optimizeLegibility; }
 button, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
-:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
-::selection { background: oklch(0.55 0.18 20 / .38); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+::selection { background: oklch(0.42 0.12 18 / .55); }
 .panel { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
-.input { width: 100%; border: 1px solid var(--line); border-radius: 8px; background: oklch(0.12 0.008 20); color: var(--ink); padding: 9px 11px; transition: border-color .18s ease, background .18s ease; }
-.input:hover { border-color: oklch(0.36 0.015 20); }
-.input:focus { border-color: var(--primary); outline: none; }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--raised); color: var(--ink); padding: 9px 12px; font-weight: 600; transition: background .18s ease, border-color .18s ease; }
-.btn:hover { background: oklch(0.22 0.011 20); }
-.btn-primary { border-color: var(--primary); background: var(--primary); color: white; }
-.btn-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
+.input { width: 100%; border: 1px solid var(--line); border-radius: 8px; background: oklch(0.115 0.004 25); color: var(--ink); padding: 9px 11px; transition: border-color .18s ease, background .18s ease; }
+.input:hover { border-color: oklch(0.38 0.016 45); }
+.input:focus { border-color: var(--gold); background: oklch(0.13 0.006 25); outline: none; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--raised); color: var(--ink); padding: 9px 12px; font-weight: 650; transition: background .18s ease, border-color .18s ease, color .18s ease; }
+.btn:hover { border-color: oklch(0.39 0.016 45); background: oklch(0.22 0.009 25); }
+.btn-primary { border-color: var(--wine); background: var(--wine); color: white; }
+.btn-primary:hover { border-color: var(--wine-hover); background: var(--wine-hover); }
 .nav-link { display: flex; align-items: center; gap: 11px; border-radius: 8px; color: var(--muted); padding: 9px 10px; font-size: 13px; font-weight: 600; transition: color .18s ease, background .18s ease; }
-.nav-link:hover { background: oklch(0.2 0.01 20); color: var(--ink); }
-.nav-link-active { background: oklch(0.55 0.18 20 / .14); color: white; }
+.nav-link:hover { background: oklch(0.19 0.006 25); color: var(--ink); }
+.nav-link-active { background: var(--gold-soft); color: var(--ink); }
+.eyebrow { color: var(--gold); font-size: 10px; font-weight: 750; letter-spacing: .13em; }
+.page-title { margin: 0; color: white; font-size: 28px; font-weight: 650; letter-spacing: -.025em; }
+.metric-card { position: relative; overflow: hidden; }
+.metric-card::before { position: absolute; inset: 0 auto 0 0; width: 2px; background: var(--gold); content: ""; opacity: .72; }
+.skeleton { background: oklch(0.21 0.005 25); border-radius: 8px; animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .55; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }

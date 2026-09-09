@@ -1,0 +1,3 @@
+export default function AppLoading() {
+  return <div className="space-y-6"><div className="space-y-3"><div className="skeleton h-3 w-24"/><div className="skeleton h-8 w-64"/><div className="skeleton h-4 w-96 max-w-full"/></div><div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6">{Array.from({ length: 6 }, (_, index) => <div key={index} className="panel h-28 p-4"><div className="skeleton h-3 w-20"/><div className="skeleton mt-5 h-7 w-28"/></div>)}</div><div className="grid gap-5 xl:grid-cols-[1.72fr_.8fr]"><div className="panel h-80"/><div className="panel h-80"/></div></div>;
+}

@@ -1,11 +1,21 @@
 "use client";
 
-import { BarChart3, BellRing, Facebook, Eye, Clapperboard, Link2, Package, Plug, Settings, Users, WalletCards, PanelLeftClose } from "lucide-react";
+import { operationalNavigation, administrativeNavigation, type NavigationItem } from "@/lib/navigation";
+import { Activity, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Brand } from "./brand";
 
-const navigation = [{ href: "/dashboard", label: "Dashboard", icon: BarChart3 }, { href: "/paginas-internas", label: "Páginas internas", icon: Facebook }, { href: "/paginas-monitoradas", label: "Páginas monitoradas", icon: Eye }, { href: "/videos-validados", label: "Vídeos validados", icon: Clapperboard }, { href: "/inspiracoes", label: "Inspirações", icon: BellRing }, { href: "/utms", label: "UTMs", icon: Link2 }, { href: "/produtos", label: "Produtos", icon: Package }, { href: "/financeiro", label: "Financeiro", icon: WalletCards }, { href: "/integracoes", label: "Integrações", icon: Plug }];
-const admin = [{ href: "/usuarios", label: "Usuários", icon: Users }, { href: "/configuracoes", label: "Configurações", icon: Settings }];
+export function NavigationLinks({ onNavigate }: { onNavigate?: () => void }) {
+  const pathname = usePathname();
+  const item = (entry: NavigationItem) => {
+    const Icon = entry.icon;
+    const active = pathname === entry.href || (entry.href !== "/dashboard" && pathname.startsWith(`${entry.href}/`));
+    return <Link onClick={onNavigate} key={entry.href} href={entry.href} className={`nav-link ${active ? "nav-link-active" : ""}`}><Icon size={16} strokeWidth={active ? 2.2 : 1.75}/><span className="flex-1">{entry.label}</span>{active && <ChevronRight size={14} className="text-[var(--gold)]"/>}</Link>;
+  };
+  return <><p className="eyebrow mb-2 px-2">OPERAÇÃO</p><div className="space-y-1">{operationalNavigation.map(item)}</div><div className="mt-6 border-t border-[var(--line)] pt-5"><p className="eyebrow mb-2 px-2">ADMINISTRAÇÃO</p><div className="space-y-1">{administrativeNavigation.map(item)}</div></div></>;
+}
 
-export function AppSidebar() { const pathname = usePathname(); const item = (entry: typeof navigation[number]) => { const Icon = entry.icon; const active = pathname === entry.href; return <Link key={entry.href} href={entry.href} className={`nav-link ${active ? "nav-link-active" : ""}`}><Icon size={16} strokeWidth={active ? 2.25 : 1.8} />{entry.label}</Link>; }; return <aside className="sticky top-0 hidden h-screen w-[244px] shrink-0 flex-col border-r border-[var(--line)] bg-[oklch(0.12_0.008_20)] p-4 lg:flex"><div className="flex h-12 items-center justify-between border-b border-[var(--line)] pb-4"><Brand /><PanelLeftClose size={17} className="text-[var(--muted)]" /></div><nav className="mt-5 space-y-1">{navigation.map(item)}</nav><div className="mt-6 border-t border-[var(--line)] pt-5"><p className="mb-2 px-2 text-[10px] font-bold tracking-[.12em] text-[var(--muted)]">ADMINISTRAÇÃO</p><div className="space-y-1">{admin.map(item)}</div></div><div className="mt-auto rounded-lg border border-[var(--line)] bg-[var(--surface)] p-3"><p className="m-0 text-xs font-semibold text-white">Integrações</p><p className="mt-1 text-xs leading-5 text-[var(--muted)]">Configure fontes de dados quando tiver as credenciais.</p><Link href="/integracoes" className="mt-2 inline-block text-xs font-semibold text-[#f3b2a2] hover:text-white">Ver integrações →</Link></div></aside>; }
+export function AppSidebar() {
+  return <aside className="sticky top-0 hidden h-screen w-[260px] shrink-0 flex-col border-r border-[var(--line)] bg-[oklch(0.115_0.003_25)] p-4 lg:flex"><div className="flex h-14 items-center border-b border-[var(--line)] px-1 pb-4"><Brand/></div><nav className="mt-6 overflow-y-auto"><NavigationLinks/></nav><div className="mt-auto rounded-xl border border-[var(--line)] bg-[oklch(0.14_0.005_25)] p-3.5"><div className="flex items-center gap-2"><span className="grid h-7 w-7 place-items-center rounded-md bg-[var(--gold-soft)] text-[var(--gold)]"><Activity size={15}/></span><p className="m-0 text-xs font-semibold text-white">Operação conectada</p></div><p className="mb-0 mt-2 text-[11px] leading-5 text-[var(--muted)]">Cadastre ativos e importe resultados sem depender de integrações fictícias.</p></div></aside>;
+}
