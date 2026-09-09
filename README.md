@@ -20,7 +20,7 @@ Painel interno da Volkov para páginas de Facebook, criativos, UTMs e resultado 
    cp .env.example .env.local
    ```
 
-2. Crie um projeto no Supabase e preencha `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY` em `.env.local`.
+2. Crie um projeto no Supabase e preencha `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` em `.env.local`.
 
 3. No **SQL Editor** do Supabase, execute o arquivo [20260909120000_volkov_hub.sql](./supabase/migrations/20260909120000_volkov_hub.sql).
 
