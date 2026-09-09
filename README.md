@@ -53,6 +53,10 @@ A tela Financeiro aceita CSV com cabeçalho. Para vendas, use no mínimo `gross_
 
 UTM5, MCP e Meta/Facebook aparecem como configurações estruturadas, porém nenhuma credencial, scraping ou sincronização foi inventada. Antes de ativá-las, implemente uma função de servidor/Edge Function usando a documentação e as chaves autorizadas da plataforma.
 
+### MCP da UTMify
+
+Cadastre `UTMIFY_MCP_URL` no ambiente local e em **Netlify > Site configuration > Environment variables**. Use a URL MCP completa fornecida pela UTMify, incluindo o token. Esta é uma variável de servidor: não use o prefixo `NEXT_PUBLIC_` e não a inclua no Git. O dashboard confirma a disponibilidade do endpoint; a importação de métricas será adicionada quando o método MCP de leitura correspondente estiver documentado e validado.
+
 ## Verificação
 
 ```bash
