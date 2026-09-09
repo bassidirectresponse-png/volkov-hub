@@ -1,0 +1,3 @@
+import { DatabaseZap, Plus } from "lucide-react";
+
+export function EmptyState({ title = "Nenhum registro encontrado", description = "Os dados cadastrados aparecerão aqui.", action }: { title?: string; description?: string; action?: () => void }) { return <div className="flex min-h-64 flex-col items-center justify-center px-6 text-center"><span className="grid h-12 w-12 place-items-center rounded-full bg-[oklch(0.55_0.18_20_/_0.12)] text-[#f4aa98]"><DatabaseZap size={21}/></span><h3 className="mb-1 mt-4 text-sm font-semibold text-white">{title}</h3><p className="m-0 max-w-sm text-xs leading-5 text-[var(--muted)]">{description}</p>{action && <button onClick={action} className="btn btn-primary mt-4 text-xs"><Plus size={15}/>Cadastrar agora</button>}</div>; }

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 560" role="img" aria-labelledby="title desc">
+  <title id="title">Volkov</title><desc id="desc">Marca vetorial de lobo geométrico dourado Volkov</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f7dfa0"/><stop offset=".42" stop-color="#b78337"/><stop offset=".72" stop-color="#f6d783"/><stop offset="1" stop-color="#754111"/></linearGradient>
+    <linearGradient id="darkGold" x1="0" x2="1"><stop stop-color="#754111"/><stop offset="1" stop-color="#e1b85c"/></linearGradient>
+  </defs>
+  <g fill="url(#gold)" stroke="#ffe6a0" stroke-width="1.2" stroke-linejoin="round">
+    <path d="M126 45 66 186l44 76 33-93 25-55z"/><path d="m386 45 60 141-44 76-33-93-25-55z"/>
+    <path d="m127 48 74 102-45 10-32-50zM385 48l-74 102 45 10 32-50z" fill="url(#darkGold)"/>
+    <path d="m156 160 100 77 100-77-48 128-52 73-52-73z"/>
+    <path d="m207 155 49 82 49-82-49 37z" fill="#2b1706"/>
+    <path d="m78 258 78-98 68 128-87 28zM434 258l-78-98-68 128 87 28z"/>
+    <path d="m77 258 92 59-88 77 38-103zM435 258l-92 59 88 77-38-103z" fill="url(#darkGold)"/>
+    <path d="m114 344 110-56 32 74-86 35zM398 344l-110-56-32 74 86 35z"/>
+    <path d="m170 397 86-35 0 105-58-41zM342 397l-86-35 0 105 58-41z" fill="url(#darkGold)"/>
+    <path d="m224 288 32 74 32-74-32-51z"/><path d="m205 372 51-10 51 10-51 62z" fill="#201205"/>
+    <path d="m211 430 45-36 45 36-45 61z"/><path d="m232 445 24 46 24-46-24 10z" fill="#2a1605"/>
+    <path d="m192 301 43 18-25 17-40-7zM320 301l-43 18 25 17 40-7z" fill="#2a1605"/>
+    <path d="m131 285 61 16-26 27-48-19zM381 285l-61 16 26 27 48-19z"/>
+  </g>
+  <g fill="#e4bb65" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="500" letter-spacing="12"><text x="48" y="548">VOLKOV</text></g>
+</svg>

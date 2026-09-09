@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --bg: oklch(0.105 0.008 20); --surface: oklch(0.145 0.009 20); --raised: oklch(0.18 0.01 20); --ink: oklch(0.95 0.005 20); --muted: oklch(0.68 0.012 20); --line: oklch(0.27 0.012 20); --primary: oklch(0.55 0.18 20); --primary-hover: oklch(0.50 0.18 20); --success: oklch(0.72 0.15 150); --warning: oklch(0.78 0.15 80); }
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body { min-height: 100vh; margin: 0; background: var(--bg); color: var(--ink); font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+::selection { background: oklch(0.55 0.18 20 / .38); }
+.panel { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.input { width: 100%; border: 1px solid var(--line); border-radius: 8px; background: oklch(0.12 0.008 20); color: var(--ink); padding: 9px 11px; transition: border-color .18s ease, background .18s ease; }
+.input:hover { border-color: oklch(0.36 0.015 20); }
+.input:focus { border-color: var(--primary); outline: none; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--raised); color: var(--ink); padding: 9px 12px; font-weight: 600; transition: background .18s ease, border-color .18s ease; }
+.btn:hover { background: oklch(0.22 0.011 20); }
+.btn-primary { border-color: var(--primary); background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
+.nav-link { display: flex; align-items: center; gap: 11px; border-radius: 8px; color: var(--muted); padding: 9px 10px; font-size: 13px; font-weight: 600; transition: color .18s ease, background .18s ease; }
+.nav-link:hover { background: oklch(0.2 0.01 20); color: var(--ink); }
+.nav-link-active { background: oklch(0.55 0.18 20 / .14); color: white; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
