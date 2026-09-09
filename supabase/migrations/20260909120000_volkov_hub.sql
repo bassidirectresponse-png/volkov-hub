@@ -272,8 +272,8 @@ create policy "admins read activity logs" on public.activity_logs for select to 
 -- insert into storage.buckets (id, name, public) values ('volkov-media', 'volkov-media', false) on conflict do nothing;
 create policy "authenticated read volkov media" on storage.objects for select to authenticated using (bucket_id = 'volkov-media');
 create policy "operators upload volkov media" on storage.objects for insert to authenticated with check (bucket_id = 'volkov-media');
-create policy "owners update volkov media" on storage.objects for update to authenticated using (bucket_id = 'volkov-media' and owner_id = auth.uid());
-create policy "owners delete volkov media" on storage.objects for delete to authenticated using (bucket_id = 'volkov-media' and owner_id = auth.uid());
+create policy "owners update volkov media" on storage.objects for update to authenticated using (bucket_id = 'volkov-media' and owner_id = auth.uid()::text);
+create policy "owners delete volkov media" on storage.objects for delete to authenticated using (bucket_id = 'volkov-media' and owner_id = auth.uid()::text);
 
 comment on table public.monitored_pages is 'Cadastro manual de referências públicas; não autoriza nem implementa scraping.';
 comment on table public.integrations is 'Credenciais nunca devem ser salvas em config; use variáveis de ambiente e Edge Functions.';
