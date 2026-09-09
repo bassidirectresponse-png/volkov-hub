@@ -3,6 +3,7 @@ import { Box, Clapperboard, Eye, Facebook, Link2, Package, Plug, Users } from "l
 
 export type Field = { key: string; label: string; type?: "text" | "url" | "number" | "textarea" | "select" | "date"; options?: string[]; required?: boolean; hint?: string };
 export type Resource = { table: string; singular: string; plural: string; description: string; icon: LucideIcon; fields: Field[]; list: string[] };
+export type ClientResource = Omit<Resource, "icon">;
 
 const common = { required: true };
 export const resources: Record<string, Resource> = {
